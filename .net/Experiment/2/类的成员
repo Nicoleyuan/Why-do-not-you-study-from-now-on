@@ -1,0 +1,24 @@
+实验二：类的成员（访问权限修饰符；方法的参数传递；静态成员；set-get Property; 构造函数及其重载）
+时间：2018.4.2 （2学时）
+内容：【建议: 在Visual Studio 20XX的解决方案管理器窗口创建Experiment2文件夹，在其中分别创建Student.cs和MethodParameter.cs来处理第①、②题， 并从项目的Program.cs中的Main方法中来调用/测试】
+①   定义一个Student类
+要求如下(字段名称后面的括号中给出了相应的类型要求)：
+i. 静态只读字段:
+studentNum (int) : 代表当前已经产生的Student对象的个数。
+ii. 非静态字段(实例字段)：
+sno (int: 要求调用构造函数创建Student对象以后，sno不允许修改)
+sname (string), age (int), major (string), entryYearMon (string), politicalStatus (string)
+iii. 构造函数
+三个重载的版本: (sno)；(sno, sname, age)；(sno, sname, age…所有字段)
+iv. Property
+StudentNum：操纵字段studentNum，为只读Property
+SNO: 操纵字段sno，为只读Property
+SName: 操纵字段sname
+… … 〖其他所有Property的名字与字段的名字只是首字母大小写的变化〗
+v．重写ToString方法，方便对Student对象以字符串方式输出
+public override string ToString() {
+      return String.Format(格式控制串, 参数列表);
+}  //【要求：每个字段单独一行显示,  格式：  "姓名: 张三"，如果字段未赋值，则显示格式如： "姓名: N/A"】
+②   方法的参数传递 (注意静态方法与非静态方法在调用形式的区别)：
+i. 定义带3个double参数 (a, b, c) 的静态方法Order，要求返回主调程序之后，三个实参按参数位置从大到小排过序。
+ii. 定义非静态方法void Sum(out 参数result, params参数array)：要求调用该方法之后，对应形参result的实参值为后面参数值之和。注意测试时对应params参数array不仅可以是数组，还可以是离散的几个常数或者变量。
