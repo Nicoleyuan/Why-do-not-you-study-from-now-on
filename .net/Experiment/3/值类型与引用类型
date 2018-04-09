@@ -1,0 +1,27 @@
+实验三：值类型与引用类型（结构与类的比较；数组；索引器；集合与泛型）
+时间：2018.4.9 （2学时）
+内容：【建议: 在Visual Studio 20XX的解决方案管理器窗口创建Experiment3文件夹】
+①   阅读下面的程序，当其中的两个空分别填写(1)(3)、(1)(4)、(2)(3)及(2)(4)时， 写出相应的程序在编译时和/或运行时的情况。
+  using System;
+  ________ A { //(1)struct 或 (2)class
+     int i;
+     public override string ToString() {
+         return string.Format("An A object of i={0}.", i);
+      }
+      public static void Main()
+      {
+         ____________  //(3)A a; 或 (4) A a = null;
+         a.i = 2;
+         Console.WriteLine(a);
+      }
+  }
+②   定义两个类Course和Student，其中Course类包含属性cno(string)、cname(string)、credit(double:学分)；Student包含属性sno(int)、sname(string)、major(string)、courses(Course[]类型，代表学生所选的课程)。要求如下：
+  i. 在Course类和Student类中重写ToString方法，方便输出相应的对象。
+    public override string ToString() {
+        return String.Format(格式控制串, 参数列表);
+    }
+  ii. 在Student类中定义索引器，方便以学生对象stu以stu[index]的形式设置和读取stu对象所选的指定课程（其中index为int型，注意是否越界）。
+  iii. 在Student类中定义重载的索引器，方便以学生对象stu以stu[cno]的形式读取stu对象所选的指定课程（注意课程号cno为string型，可以循环地使用字符串Equals方法或==运算符试着做课程号对比以判断课程是否存在）。
+  iv. （附加题，选做）因iii中没有考虑性能。设计合适的方法或者选择合适的集合替换Student类上的course的定义，让课程查找过程效率更高。
+③   自定义一个类JudgeBracketsMatched，其中定义方法public static bool IsMatched(string expression)，接受字符串形式的四则运算表达式，返回bool值以表明其中的括号是否正确配对。建议使用泛型集合System.Collections.Generic.Stack<char>。
+④   定义重载的两个泛型方法Transpose，分别实现对二维矩形数组T[,]和二维交错数组T[][]的转置。要求调用前后，实参发生转置。再，对于二维交错数组可以判断其中每一个一维数组的元素个数是否都相同，若个数不同则拒绝转置。
