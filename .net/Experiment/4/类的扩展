@@ -1,0 +1,43 @@
+实验四：类的扩展（继承，抽象类与抽象方法，虚方法，方法重写，接口）
+时间：2018.4.16 （2学时）
+内容：【建议: 在Visual Studio 20XX的解决方案管理器窗口创建Experiment4文件夹】
+①   编写类Shape和其子类Circle及Cube (立方体)。下面给出测试类：
+public class Experiment4ab
+{
+  public static void Main()
+  {
+    Shape s1 = new Circle();
+    ((Circle)s1).R = 2; //R为set-get Property
+    s1.Area();
+    s1.Volume();
+    Shape s2 = new Cube();
+    ((Cube)s2).SizeLength = 2; //SizePr…为set-get Property
+    s2.Area();
+    s2.Volume();
+  }
+}
+要实现的输出结果如下：
+半径为2的圆的面积是:12.5663706143592.
+圆的体积:N/A
+边长为2的立方体表面积是:24.
+边长为2的立方体体积是8.
+要求如下：
+Shape类为抽象类，其中抽象方法Area和Volume要在两个子类中分别进行重写。
+②   功能要求同①，要求是
+(具体类)Shape中包含虚方法Area和Volume并要在两个子类中分别进行重写
+③   功能要求同①，要求改用接口IArea和IVolume，测试类如下:
+  public class Experiment4c {
+    public static void Main() {
+      IArea a1 = new Circle();  //Circle类不用实现接口IVolume
+      IArea a2 = new Cube();
+      ((Circle)a1).R = 2;
+      ((Cube)a2).SizeLength = 2;
+      a1.Area();
+      a2.Area();
+      ((IVolume)a2).Volume();
+    }
+  }
+要实现的输出结果如下：
+半径为2的圆的面积是:12.5663706143592.
+边长为2的立方体表面积是:24.
+边长为2的立方体体积是8.
