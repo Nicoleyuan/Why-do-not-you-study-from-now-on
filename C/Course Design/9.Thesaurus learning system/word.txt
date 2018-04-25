@@ -1,0 +1,1 @@
+            book     n        书           apple     n      苹果             sea     n        海             sun     n      太阳            moon     n      月亮             run     v        跑             jog     v      竞走            like     v      喜欢         clothes     n      衣服             sky     n      天空
