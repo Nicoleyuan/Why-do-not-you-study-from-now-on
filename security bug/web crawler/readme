@@ -1,0 +1,7 @@
+1、	 三个爬虫利用scrapy框架编写，分别用于抓取security bug report，随机抓取bug report以及抓取每
+      个report的history信息。关于scrapy的安装和使用方法可以参考
+      http://scrapy-chs.readthedocs.org/zh_CN/latest/intro/tutorial.html
+2、	Bugs\bugs\spiders\mySpider\DmozSpider\__init__方法中可以修改随机产生的bug id范围及数量。
+3、	每个爬虫的pipelines.py中可以修改数据库信息
+4、	history爬虫目前读取mozilla.bugs这个数据表中的bug_id，然后抓取相应数据。可以在mySpider文件
+      中的__init__方法以及pipelines.py中修改数据表。
