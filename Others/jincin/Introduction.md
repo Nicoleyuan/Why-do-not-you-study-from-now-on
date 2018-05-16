@@ -3,10 +3,10 @@
 
 
 ## 视频解析代码
-'javascript:eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('n=c;1=4();i=3;e=0;5(i--){6.7({8:"9",b:"/2/d.f"+"?"+1,g:"h",j:k,l:m(a){o(a);e++;p(e>q){r.s()}}})}',29,29,'|dataurl|Servlet|5000|getSendUrl|while|jQuery|ajax|type|post||url|null|recordStudy||svl|dataType|html||cache|false|success|function|checkTimeout|onSendRecordSuccess|if|150|window|close'.split('|'),0,{}))'
+' javascript:eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('n=c;1=4();i=3;e=0;5(i--){6.7({8:"9",b:"/2/d.f"+"?"+1,g:"h",j:k,l:m(a){o(a);e++;p(e>q){r.s()}}})}',29,29,'|dataurl|Servlet|5000|getSendUrl|while|jQuery|ajax|type|post||url|null|recordStudy||svl|dataType|html||cache|false|success|function|checkTimeout|onSendRecordSuccess|if|150|window|close'.split('|'),0,{})) '
 
 ## 使用方法介绍
-> 登录 http://yzu.njcedu.com/，选择视频打开，开始播放后，在地址栏粘贴代码。回车，若干秒后视频自动关闭，刷新任务，视频已看完。
+> 登录 http://yzu.njcedu.com/ 选择视频打开，开始播放后，在地址栏粘贴代码。回车，若干秒后视频自动关闭，刷新任务，视频已看完。
 > 课间习题拖动进度条到指定位置，题目会自己蹦出来。记住答案，退出去再回来。
 > I got u :ok_hand:
 
@@ -24,7 +24,7 @@
  缺点在于，刷视频过程中会向服务器后端发送大量垃圾请求，造成服务器负载加重，易被运维察觉。
 
 ## 解决方案
-**限制来自客户端的请求频率。**
+** 限制来自客户端的请求频率。 **
 -----------
 ## 锦程网考试小帮手（半自动化）
 > 地址：[小帮手](http://pan.baidu.com/s/1skC0jsL/小帮手)
