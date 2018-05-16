@@ -36,5 +36,6 @@
  
  *tips：也会有部分是:grey_question: 查一查就好了 如果你可以的话 写个更厉害的造福全人类吧:clap:*
 
-:bangbang:  仅用于学习交流    :x:其他用途
+
+:bangbang:  :heavy_exclamation_mark:仅用于学习交流    :x:其他用途
 :bangbang:  :copyright: 82Flex
