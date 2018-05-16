@@ -1,6 +1,5 @@
 # **锦程网**
-> 地址：[锦程网](http://yzu.njcedu.com/锦程网)
-
+> 地址：[锦程网](http://yzu.njcedu.com/锦程网) :point_left:
 
 ## 视频解析代码
 ` javascript:eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('n=c;1=4();i=3;e=0;5(i--){6.7({8:"9",b:"/2/d.f"+"?"+1,g:"h",j:k,l:m(a){o(a);e++;p(e>q){r.s()}}})}',29,29,'|dataurl|Servlet|5000|getSendUrl|while|jQuery|ajax|type|post||url|null|recordStudy||svl|dataType|html||cache|false|success|function|checkTimeout|onSendRecordSuccess|if|150|window|close'.split('|'),0,{})) `
@@ -29,12 +28,13 @@
 ***
 
 ## 锦程网考试小帮手（半自动化）
-> 地址：[小帮手](http://pan.baidu.com/s/1skC0jsL/小帮手)
+> 地址：[小帮手](http://pan.baidu.com/s/1skC0jsL/小帮手) :point_left:
 
 ### 使用方法介绍
 > 运行程序，在地址栏中填写自己学校的锦成网分站地址，进入期末考试页面。
- 点击左下角分析答案，稍等片刻后答案会出现在左侧，按顺序填写并提交试卷即可。<
-  *tips：也会有部分？ 查一查就好了 如果你可以的话 写个更厉害的造福全人类吧*
+  点击左下角分析答案，稍等片刻后答案会出现在左侧，按顺序填写并提交试卷即可。
+ 
+ *tips：也会有部分是:grey_question: 查一查就好了 如果你可以的话 写个更厉害的造福全人类吧:clap:*
 
-
-@copyright 82Flex
+:bangbang:  仅用于学习交流    :x:其他用途
+:bangbang:  :copyright: 82Flex
