@@ -6,7 +6,7 @@
 
 | Ⅰ | Ⅱ | Ⅲ | Ⅳ | Ⅴ | Ⅵ | Ⅶ | 
 | :---------: | :---------: | :---------: | :---------: | :---------: | :---------:| :---------: | 
-| 算法[:pencil2:](#算法-pencil2) | 操作系统[:computer:](#操作系统-computer)|C#[:coffee:](#C\#-coffee) | security bug[:cloud:](#security bug-cloud) |Deep Learning[:floppy_disk:](#Deep Learning-floppy_disk)| C [:tea:](#C-tea)| Others[:hammer:](#Others-hammer)| 
+| 算法[:pencil2:](#算法-pencil2) | 操作系统[:computer:](#操作系统-computer) | C#[:coffee:](#C\#-coffee) | security bug[:cloud:](#security bug-cloud) | Deep Learning[:floppy_disk:](#Deep Learning-floppy_disk) | C [:tea:](#C-tea) | Others[:hammer:](#Others-hammer) | 
 
 
 ## 算法 :pencil2:
@@ -14,9 +14,9 @@
 
 2.实验
 
-	>①[Sorting Algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/1 Sorting Algorithm/content)
+	①[Sorting Algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/1 Sorting Algorithm/content)
 	
-	>②[Greedy algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/2 Greedy algorithm/content)
+	②[Greedy algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/2 Greedy algorithm/content)
 
 
 ## 操作系统 :computer:
