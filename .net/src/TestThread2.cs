@@ -1,4 +1,4 @@
-TestThread2.cs --线程方法带参数时，不能使用ThreadStart委托
+//TestThread2.cs --线程方法带参数时，不能使用ThreadStart委托
 
 using System;
 using System.Threading;
