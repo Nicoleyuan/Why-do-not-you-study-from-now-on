@@ -1,4 +1,4 @@
-TestIDisposable.cs 对象资源的释放；析构函数；GC.SuppressFinalize(obj) ； IDisposable接口与Dispose方法；using语句块
+//TestIDisposable.cs 对象资源的释放；析构函数；GC.SuppressFinalize(obj) ； IDisposable接口与Dispose方法；using语句块
 
 using System;
 class Resource : IDisposable {
