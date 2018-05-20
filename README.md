@@ -49,7 +49,7 @@
 3.Experimental report
 
 ## Others :hammer:
-1.[jincen](Why-do-not-you-study-from-now-on/Others/jincin/Introduction.md)
+1.[jincin](Why-do-not-you-study-from-now-on/Others/jincin/Introduction.md)
 
 
 
