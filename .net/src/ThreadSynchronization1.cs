@@ -1,4 +1,4 @@
-ThreadSynchronization1.cs --没有做同步
+//ThreadSynchronization1.cs --没有做同步
 
 using System;
 using System.Threading;
