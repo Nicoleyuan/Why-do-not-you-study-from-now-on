@@ -1,4 +1,4 @@
-ListDirContent.cs --按目录树形式列出文件夹下的所有目录和文件；递归
+//ListDirContent.cs --按目录树形式列出文件夹下的所有目录和文件；递归
 
 using System;
 using System.Collections.Generic;
