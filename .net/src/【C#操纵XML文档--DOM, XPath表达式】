@@ -1,0 +1,248 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+//导入命名空间
+using System.Xml;
+/*
+ *
+实验目标
+  （1）了解DOM的概念；
+  （2）会使用DOM处理XML数据。
+ *
+实验内容：
+  给定一个XML文件（如 university.xml），定位到“信息工程学院”：
+    ① 寻找有没有“物联”专业：
+      (a) 如果有，改名为“物联网工程”；
+      (b) 如果没有：
+          再判断有没有“物联网工程”专业，
+          若没有“物联网工程”则插入新专业“物联网工程”。
+        
+    ②为“信息工程学院”中的所有  没有majorid属性的 专业添加id属性，
+       并且按专业的顺序依次编号为1，2，3,...
+      
+    ③添加一个新专业“大数据技术”（属性 majorid 的值为9）
+       〖即添加一行   <专业部 majorid="9">大数据技术</专业部>
+         到信息工程学院下面〗
+        
+    ④将信息工程学院的 软件工程 专业部 与 信息管理与信息系统 专业部
+        合并成 软件与信息管理 专业部。
+      //方式一:可以将其中一个专业部 改名，删除另外一个专业部
+      //方式二/三：也可以将原来的这两个专业部删除，再
+      //   添加新的专业部(即创建新专业部并附加到信息工程学院)。
+ * */
+namespace XmlDOMTest  //DOM(Document Object Model:文档对象模型)
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      XmlDocument doc = new XmlDocument();
+      doc.Load(@"D:\university.xml"); //注意文件路径
+      // @-- 字面字符串（string literals），否则用 "\\"
+      XmlNode root = doc.DocumentElement; //定位到根元素                    
+      //下面想在 信息工程学院 下面做点事：
+      //前提就存在该学院 并试图定位到 信息工程学院
+      if (root.HasChildNodes) //大学下有学院
+      {
+        //下面的item 是 学院 级别的元素
+        foreach (XmlNode item in root.ChildNodes) //对于每一个学院item
+        {
+          // item 元素的 Attributes中有两个属性
+          //     .Item(0) -- id,  .Item(1) -- name
+          if (item.Attributes.Item(1).Value.Equals("信息工程学院"))
+          {
+            //到这里：item就代表 信息工程学院 了
+            // 【①】--(a)  寻找 "物联"/"物联网工程" 专业， 找到hasWuLian置true
+            //            如果专业名是"物联"，则改名
+            bool hasWuLian = false;
+            if (item.HasChildNodes) //学院下有专业时:
+            {
+              // item.ChildNodes.Count -- 学院(节点)的孩子节点数目
+              //                       --    或 专业数目
+              for (int i = 0; i < item.ChildNodes.Count; i++)
+              {
+                string majorname = item.ChildNodes[i].InnerText;
+                if (majorname=="物联" || majorname == "物联网工程")
+                {
+                  if (majorname=="物联")
+                  {
+                    //找到了 "物联" : 修改专业名为 "物联网工程"
+                    item.ChildNodes[i].InnerText = "物联网工程";
+                    Console.WriteLine("物联 专业名称被修改为 物联网工程.");
+                  }
+                  hasWuLian = true;
+                  break; //退出for-loop
+                }
+              }
+            }  //end-- if (item.HasChildNodes) //学院下有专业:到这结束
+            //   若没有找到，则插入新专业"物联网工程"（执行到这 hasWuLian 仍为 false）
+            //     已知 item 代表 信息工程学院
+            if (!hasWuLian)
+            {
+              //产生一个元素：物联网工程 专业             
+              XmlElement wulian = doc.CreateElement("专业部");
+              wulian.InnerText = "物联网工程";  //这样设置等价于下面两行：
+              //XmlText txtWulian = doc.CreateTextNode("物联网工程");
+              //wulian.AppendChild(txtWulian); //添加 文本节点到专业部
+              item.AppendChild(wulian);      //添加 专业部结点wulian 到学院item
+              //即学院item下多了 <专业部>物联网工程</专业部>
+             
+              //如果想把新专业添加 属性majorid且属性值为4，则可以用下面的3行
+              //XmlAttribute majorid = doc.CreateAttribute("majorid");
+              //majorid.Value = "4";
+              //wulian.Attributes.Append(majorid);  //添加属性majorid到专业部
+              //此时，学院item下的专业部分结点wulian变成:
+              //     <专业部 majorid="4">物联网工程</专业部>
+             
+            }//end --  if (!hasWuLian)
+            //【②】为“信息工程学院”中
+            //         所有的 没有majorid属性的 专业添加id属性
+            int id = 1;
+            XmlAttribute majorid;
+            foreach (XmlNode major in item.ChildNodes)
+            {
+              //major.Attributes.RemoveAll(); //移除major专业的所有属性
+              //比如若当前major之前是这样:
+              //   <专业部 majorid="19" type="省特色专业">大数据技术</专业部>
+              //那么major.Attributes.RemoveAll()被调用后, major变成这样：
+              //   <专业部>大数据技术</专业部>
+              majorid = doc.CreateAttribute("majorid");
+              //           ▼▼int_obj.ToString():由数值（int值 123）转换成字面字符串"123"
+              majorid.Value = id.ToString();     //比如majorid="1"
+              major.Attributes.Append(majorid);  //majorid="1"成为第一个专业部的属性
+              id++;
+            }
+           
+            //【③】为“信息工程学院”添加一个新专业 majorid 值为9 的新专业 “大数据技术”
+            //XmlNode todel = item.LastChild;
+            //if (todel.InnerText == "大数据技术")
+            //  item.RemoveChild(todel);
+            //★★下面的部分内容可以  百度搜索【 SelectNodes或SelectSingleNode XPath表达式】 
+            //XmlNode todel = item.SelectSingleNode("专业部[@majorid >= ’5’]"); 
+            //XmlNodeList todel = item.SelectNodes("专业部[text() = ’大数据技术’]");
+                //                                    ▲▲"元素[条件]"为XML数据筛选表达式
+                //            条件 可以是 【 @属性名 关系运算符 ’值’ 】 的形式
+                //                也可以是【text() 关系运算符 ’值’ 】的形式： 其中，text()表示取当前元素的InnerText
+            //foreach (XmlNode node in todel)
+            //  item.RemoveChild(node);
+           
+            XmlNode todel = item.SelectSingleNode("专业部[text() = ’大数据技术’]");
+            if(todel != null)
+              item.RemoveChild(todel);  //★删除 之前可能插入的 大数据技术 专业部的信息
+            XmlElement bigdata = doc.CreateElement("专业部");
+            bigdata.InnerText = "大数据技术";
+            //XmlText text = doc.CreateTextNode("大数据技术");
+            //bigdata.AppendChild(text);
+            majorid = doc.CreateAttribute("majorid");
+            majorid.Value = "9"; //majorid="9"
+            bigdata.Attributes.Append(majorid);
+            item.AppendChild(bigdata);
+
+            //④将 信息管理与信息系统专业 和 软件工程专业
+            //    合并为 软件与信息管理
+            //方式一：将其中一个专业部 改名，删除另外一个专业部
+            /*XmlNode infoMan =
+              item.SelectSingleNode("专业部[text()=’信息管理与信息系统’]");
+            if (infoMan != null) {
+              infoMan.InnerText = "软件与信息管理";
+            }
+            XmlNode softwareEng =
+              item.SelectSingleNode("专业部[text()=’软件工程’]");
+            if (softwareEng != null) {
+              item.RemoveChild(softwareEng);
+            }*/
+            //删除旧专业方式二： 两个全删除，再添加新专业
+            //方式二(a): 结点对象.SelectSingleNode(XPath表达式)--返回单个结点
+            /*XmlNode infoMan =
+              item.SelectSingleNode("专业部[text()=’信息管理与信息系统’]");
+            if (infoMan != null)           
+              item.RemoveChild(infoMan);
+            XmlNode softwareEng =
+              item.SelectSingleNode("专业部[text()=’软件工程’]");
+            if (softwareEng != null)
+              item.RemoveChild(softwareEng);*/
+            //方式二(b) : 结点对象.SelectNodes(XPath表达式)--返回结点集
+            XmlNodeList oldMajors = item.SelectNodes(
+              "专业部[text()=’软件工程’] | 专业部[text()=’信息管理与信息系统’]");
+            for (int i = 0; i < oldMajors.Count; i++ ) //集合.Count:元素个数
+            {
+              item.RemoveChild(oldMajors[i]);  //通通删除
+            }
+            //创建新专业部
+            XmlNode newMajor = doc.CreateElement("专业部");
+            newMajor.InnerText = "软件与信息管理";
+            //设置其属性（创建属性 并附加到新专业部）
+            XmlAttribute attr_majorid = doc.CreateAttribute("majorid");          
+            attr_majorid.Value = "101";
+            newMajor.Attributes.Append(attr_majorid);
+            //将新专业部插入到 学院item的第1个专业部之后
+            //   （即新专业部作为第2个专业部）
+            item.InsertAfter(newMajor, item.FirstChild);
+          } // end -- if (item.Attributes.Item(1).Value.Equals("信息工程学院"))
+        }  // end -- foreach (XmlNode item in root.ChildNodes) //对于每一个学院item
+      } //end -- if (root.HasChildNodes) //大学下有学院
+      //打印报表信息
+      Console.WriteLine("=================");
+      foreach (XmlAttribute attr in root.Attributes)
+      {
+        Console.Write(attr.Value);
+      }
+      Console.WriteLine("\n==================");
+      for (int i = 0; i < root.ChildNodes.Count; i++)
+      {
+        XmlNode item = root.ChildNodes.Item(i);
+        Console.WriteLine(" ****** {0} 下设专业 ******",
+            item.Attributes.Item(1).Value); //打印学院名
+        foreach (XmlNode major in item.ChildNodes)
+        {
+          if (major.Attributes.Count == 0)
+            Console.Write("专业号: N/A ");
+          else
+            Console.Write("专业号: {0}  ", major.Attributes["majorid"].Value);
+          Console.WriteLine("专业名称: {0}.", major.InnerText);
+        }
+        Console.WriteLine();
+      }
+
+      //保存 XML 文件
+      doc.Save(@"D:\university.xml");
+      Console.ReadLine();
+    }
+  }
+}
+/*
+ * ▼▼执行前 D:\university.xml 的内容(encoding="utf-8"会不会异常呢):
+<?xml version="1.0" encoding="gb2312"?>
+<university name="扬州大学">
+  <school id="1" name="信息工程学院">
+    <专业部>计算机</专业部>
+    <专业部>信息管理与信息系统</专业部>
+    <专业部>软件工程</专业部>
+    <专业部>物联</专业部>
+  </school>
+  <school id="2" name="机械工程学院">
+    <专业部>机械设计</专业部>
+    <专业部>机电一体化</专业部>
+  </school>
+</university>
+ *
+ *
+ *
+ * ▼▼执行后D:\university.xml的内容:
+ *
+ *
+<?xml version="1.0" encoding="gb2312"?>
+<university name="扬州大学">
+  <school id="1" name="信息工程学院">
+    <专业部 majorid="1">计算机</专业部>
+    <专业部 majorid="101">软件与信息管理</专业部>
+    <专业部 majorid="4">物联网工程</专业部>
+    <专业部 majorid=9">大数据技术</专业部>
+  </school>
+  <school id="2" name="机械工程学院">
+    <专业部>机械设计</专业部>
+    <专业部>机电一体化</专业部>
+  </school>
+</university>
+*/
+ 
