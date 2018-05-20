@@ -1,4 +1,4 @@
-ThreadSynchronization2.cs --同步
+//ThreadSynchronization2.cs --同步
 
 using System;
 using System.Threading;
