@@ -1,4 +1,4 @@
-TestThread1.cs --System.Threading命名空间; Thread; ThreadStart委托；线程栈
+//TestThread1.cs --System.Threading命名空间; Thread; ThreadStart委托；线程栈
 
 using System;
 using System.Threading;  //for Thread clas
