@@ -1,4 +1,4 @@
-EntryPoint.cs -- 反射与运行时类型及成员发现，方法及构造方法的动态调用
+//EntryPoint.cs -- 反射与运行时类型及成员发现，方法及构造方法的动态调用
 
 using System;
 //using ByPoints.Attributes;
