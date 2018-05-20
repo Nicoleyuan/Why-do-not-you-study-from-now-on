@@ -1,4 +1,4 @@
-//TestCatMouse.cs
+//TestCatMouse.cs 接口回调实现事件联动
 
 using System;
 using System.Collections;
