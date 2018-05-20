@@ -1,4 +1,4 @@
-//TestQueueT.cs
+//TestQueueT.cs  泛型集合Queue<T>
 
 using System;
 using System.Collections.Generic;
