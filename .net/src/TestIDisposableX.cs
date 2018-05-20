@@ -1,4 +1,4 @@
-TestIDisposableX.cs GC.SuppressFinalize(obj); IDisposable接口与Dispose()
+//TestIDisposableX.cs GC.SuppressFinalize(obj); IDisposable接口与Dispose()
 
 using System;
 class Resource : IDisposable {
