@@ -1,4 +1,4 @@
-TestIndexer.cs -- 索引器；Property与自动Property
+//TestIndexer.cs -- 索引器；Property与自动Property
 
 using System;
 using System.Collections.Generic;
