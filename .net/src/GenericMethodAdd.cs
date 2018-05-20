@@ -1,4 +1,4 @@
-public static void Sum<T>(out T result, params T[] array) --泛型方法求和
+//public static void Sum<T>(out T result, params T[] array) --泛型方法求和
 
 using System;
 using System.Collections.Generic;
