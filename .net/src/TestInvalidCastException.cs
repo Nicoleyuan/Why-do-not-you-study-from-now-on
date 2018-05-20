@@ -1,4 +1,4 @@
-TestInvalidCastException --类型转换异常，null引用异常
+//TestInvalidCastException --类型转换异常，null引用异常
 
 using System;
 namespace ConsoleApp.Ch08
