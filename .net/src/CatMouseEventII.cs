@@ -1,4 +1,4 @@
-CatMouseEventII.cs 基于委托的事件模型，事件参数的传递。委托的声明，基于委托的事件，向事件注册事件响应（处理方法）, 事件的发出
+//CatMouseEventII.cs 基于委托的事件模型，事件参数的传递。委托的声明，基于委托的事件，向事件注册事件响应（处理方法）, 事件的发出
 
 using System;
 using System.Threading;
