@@ -1,3 +1,5 @@
+//目录下面按文件扩展名搜索，文件的属性，文件/文件夹的创建与删除
+
 using System;
 using System.IO;
 namespace Ch09.Book {
