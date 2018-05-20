@@ -1,4 +1,4 @@
-TestThread3.cs --线程方法Sleep, Abort, ThreadAbortException
+//TestThread3.cs --线程方法Sleep, Abort, ThreadAbortException
 
 using System;
 using System.Threading;
