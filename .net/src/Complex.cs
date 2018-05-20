@@ -1,4 +1,4 @@
-//Complex.cs
+//Complex.cs   运算符重载
 using System;
 public class Complex {  //class or struct
   private double real;
