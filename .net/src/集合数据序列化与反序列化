@@ -1,3 +1,5 @@
+ObjectSerialization.cs --对象/集合数据序列化与反序列化
+
 //TestSerialization.cs
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
