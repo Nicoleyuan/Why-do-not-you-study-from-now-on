@@ -1,4 +1,4 @@
-//TestContactIndexer.cs
+//TestContactIndexer.cs  索引器操纵对象离散的字段
 using System;
 using System.Collections.Generic;
 using System.Linq;
