@@ -16,9 +16,9 @@
 
 2.实验
 
-①[Sorting Algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/1 Sorting Algorithm/content.md)
+[Sorting Algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/1 Sorting Algorithm/content.md)
 	
-②[Greedy algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/2 Greedy algorithm/content.md)
+[Greedy algorithm](Why-do-not-you-study-from-now-on/Algorithm/Experiment/2 Greedy algorithm/content.md)
 
 
 ## 操作系统 :computer:
