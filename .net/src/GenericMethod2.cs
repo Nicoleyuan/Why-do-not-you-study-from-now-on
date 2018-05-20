@@ -1,4 +1,4 @@
-//GenericMethod2.cs
+//GenericMethod2.cs  泛型方法, 对象的排序：System.IComparable接口，System.Collections.IComparer接口的实现
 using System;
 class Student : IComparable {
  private int id;
