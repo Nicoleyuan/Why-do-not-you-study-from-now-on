@@ -1,12 +1,14 @@
 # Why don't you study from now on :punch:
 
 个人的一些资料存储仓库
+
 （Some personal learning documents...）
+
 佛系更新...
 
 | Ⅰ | Ⅱ | Ⅲ | Ⅳ | Ⅴ | Ⅵ | Ⅶ | 
-| :---------: | :---------: | :---------: | :---------: | :---------: | :---------:| :---------: | 
-| 算法[:pencil2:](#算法-pencil2) | 操作系统[:computer:](#操作系统-computer) | C#[:coffee:](#C\#-coffee) | security bug[:cloud:](#security bug-cloud) | Deep Learning[:floppy_disk:](#Deep Learning-floppy_disk) | C [:tea:](#C-tea) | Others[:hammer:](#Others-hammer) | 
+| :---------: | :---------: | :--------: | :---------: | :---------: | :---------:| :--------: | 
+| 算法[:pencil2:](#算法-pencil2) | 操作系统[:computer:](#操作系统-computer) | C#[:coffee:](#C\#-coffee) | security_bug[:cloud:](#security_bug-cloud) | Deep_Learning[:floppy_disk:](#Deep_Learning-floppy_disk) | C [:tea:](#C-tea) | Others[:hammer:](#Others-hammer) | 
 
 
 ## 算法 :pencil2:
@@ -29,10 +31,10 @@
 ## C\# :coffee:
 
 
-## security bug :cloud:
+## security_bug :cloud:
 
 
-## Deep Learning :floppy_disk:
+## Deep_Learning :floppy_disk:
 
 
 ## C :tea:
