@@ -26,7 +26,7 @@
 
 2.The Design of the Unix Operating System.pdf
 
-3.其他
+3.others
 
 ## C\# :coffee:
 1.Experiment
@@ -42,9 +42,14 @@
 
 
 ## C :tea:
+1.Course Design
 
+2.ppts
+
+3.Experimental report
 
 ## Others :hammer:
+1.[jincen](Why-do-not-you-study-from-now-on/Others/jincin/Introduction.md)
 
 
 
