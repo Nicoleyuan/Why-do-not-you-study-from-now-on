@@ -1,4 +1,4 @@
-ObjectSerialization.cs --对象/集合数据序列化与反序列化
+//ObjectSerialization.cs --对象/集合数据序列化与反序列化
 
 //TestSerialization.cs
 using System;
