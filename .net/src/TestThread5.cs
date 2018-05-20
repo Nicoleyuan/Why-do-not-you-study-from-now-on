@@ -1,4 +1,4 @@
-TestThread5.cs --线程优先级
+//TestThread5.cs --线程优先级
 
 using System;
 using System.Threading;
