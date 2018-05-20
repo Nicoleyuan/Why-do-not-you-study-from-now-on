@@ -1,4 +1,4 @@
-//GenericMethod.cs
+//GenericMethod.cs  泛型方法
 using System;
 namespace ClassApp.Ch04
 {
